@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 /**
  * This controller is an example of the Facade design pattern, since it abstracts allt the complexity
  * of the integrations to other application in a simple and concise interface
@@ -32,13 +34,13 @@ public class CustomerRestController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Customer> save(@RequestBody Customer customer) {
+    public ResponseEntity<Customer> save(@RequestBody @Valid Customer customer) {
         service.create(customer);
         return ResponseEntity.ok(customer);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Customer> update(@PathVariable("id") Long id, @RequestBody Customer customer) {
+    public ResponseEntity<Customer> update(@PathVariable("id") Long id, @RequestBody @Valid Customer customer) {
         service.update(id, customer);
         return ResponseEntity.ok(customer);
     }
