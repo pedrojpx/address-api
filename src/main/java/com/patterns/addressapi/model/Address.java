@@ -6,7 +6,8 @@ import lombok.Setter;
 import javax.persistence.*;
 
 /**
- * Atributos gerados pelo site jsonchem2pojo.org
+ * Attributes generatia via jsonschema2pojo.org
+ * keeping original attribute names for the sake of simplicity of implementation
  *
  * @see <a href="https://www.jsonschema2pojo.org">jsonchema2pojo</a>
  * @see <a href="https://viacep.com.br">ViaCEP</a>
@@ -15,7 +16,7 @@ import javax.persistence.*;
  */
 @Entity
 @Getter @Setter
-public class Endereco {
+public class Address {
 
     @Id
     private String cep;

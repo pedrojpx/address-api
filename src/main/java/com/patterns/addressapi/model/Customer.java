@@ -7,13 +7,13 @@ import javax.persistence.*;
 
 @Entity
 @Getter @Setter
-public class Cliente {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nome;
+    private String name;
     @ManyToOne
-    private Endereco endereco;
+    private Address address;
 
 }
